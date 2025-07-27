@@ -39,9 +39,9 @@ export function Hero() {
       <SpaceBackground />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="flex items-center justify-center">
           {/* Content */}
-          <div className="space-y-8">
+          <div className="text-center">
             <div className="space-y-4">
               <div className="inline-flex items-center px-4 py-2 bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-300 rounded-full text-sm font-medium backdrop-blur-sm">
                 <Zap className="w-4 h-4 mr-2" />
@@ -68,7 +68,7 @@ export function Hero() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex justify-center gap-4 mt-8">
               <Button
                 onClick={scrollToContact}
                 size="lg"
@@ -83,17 +83,6 @@ export function Hero() {
           </div>
 
           {/* Visual */}
-          <div className="relative flex items-center justify-center">
-            <div className="relative">
-              <img
-                src="/img/lightbulb-ideas.png"
-                alt="AI Innovation Lightbulb with Technology Icons"
-                width={400}
-                height={400}
-                className="w-full h-auto max-w-md mx-auto drop-shadow-2xl"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>
