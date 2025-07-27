@@ -1,19 +1,15 @@
 import type { Config } from "tailwindcss"
-import defaultConfig from "shadcn/ui/tailwind.config"
 
 const config: Config = {
-  ...defaultConfig,
+  darkMode: ["class"],
   content: [
-    ...defaultConfig.content,
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    ...defaultConfig.theme,
     extend: {
-      ...defaultConfig.theme.extend,
       fontFamily: {
         sans: [
           "var(--font-inter)",
@@ -29,7 +25,6 @@ const config: Config = {
         ],
       },
       animation: {
-        ...defaultConfig.theme.extend.animation,
         "float-slow": "float 6s ease-in-out infinite",
         "float-medium": "float 4s ease-in-out infinite",
         "float-fast": "float 3s ease-in-out infinite",
@@ -37,7 +32,6 @@ const config: Config = {
         twinkle: "twinkle 2s ease-in-out infinite alternate",
       },
       keyframes: {
-        ...defaultConfig.theme.extend.keyframes,
         float: {
           "0%, 100%": { transform: "translateY(0px) translateX(0px)" },
           "33%": { transform: "translateY(-20px) translateX(10px)" },
@@ -55,7 +49,6 @@ const config: Config = {
         },
       },
       colors: {
-        ...defaultConfig.theme.extend.colors,
         // GitHub color palette
         github: {
           canvas: {
@@ -181,7 +174,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [...defaultConfig.plugins, require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate")],
 }
 
 export default config
