@@ -86,8 +86,8 @@ export function Hero() {
           <div className="relative flex items-center justify-center">
             <div className="relative">
               <img
-                src="/alpha-ai-labs-logo15.png"
-                alt="VENTURE AI LABS Logo - AI Innovation"
+                src="/img/lightbulb-ideas.png"
+                alt="AI Innovation Lightbulb with Technology Icons"
                 width={400}
                 height={400}
                 className="w-full h-auto max-w-md mx-auto drop-shadow-2xl"

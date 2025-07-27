@@ -23,7 +23,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <img
-              src="/alpha-ai-labs-logo15.png"
+              src="/img/alpha-ai-labs-logo15.png"
               alt="VENTURE AI LABS"
               width={40}
               height={40}

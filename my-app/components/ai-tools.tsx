@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Bot, MessageSquare, ImageIcon, FileText, BarChart3, ExternalLink, Sparkles } from "lucide-react"
+import { Bot, MessageSquare, ImageIcon, FileText, BarChart3, ExternalLink } from "lucide-react"
 
 export function AITools() {
   const tools = [
@@ -47,7 +47,7 @@ export function AITools() {
       link: "#",
     },
     {
-      icon: Sparkles,
+      icon: Bot,
       title: "AI Assistant",
       description: "Personal AI assistant for research, writing, and decision-making support.",
       features: ["Research Capabilities", "Document Analysis", "Task Management", "Learning Adaptation"],
@@ -73,10 +73,6 @@ export function AITools() {
     <section id="ai-tools" className="py-20 bg-white dark:bg-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium mb-4">
-            <Sparkles className="w-4 h-4 mr-2" />
-            AI Tools
-          </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Powerful AI Tools for Every Business
           </h2>

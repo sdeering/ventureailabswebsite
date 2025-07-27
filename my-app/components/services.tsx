@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Bot, Rocket, Search, Share2, Zap, Brain, Target, TrendingUp } from "lucide-react"
+import { Bot, Rocket, Search, Share2, Brain, Target, TrendingUp } from "lucide-react"
 
 export function Services() {
   const services = [
@@ -35,10 +35,6 @@ export function Services() {
     <section id="services" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-4">
-            <Zap className="w-4 h-4 mr-2" />
-            Our Services
-          </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Comprehensive AI Solutions
           </h2>
