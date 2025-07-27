@@ -55,8 +55,8 @@ export function Contact() {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Let&apos;s discuss how ALPHA AI LABS can help you leverage AI to achieve your business goals. Get in touch
-            for a free consultation.
+            Let's discuss how ALPHA AI LABS can help you leverage AI to achieve your business goals. Get in touch for a
+            free consultation.
           </p>
         </div>
 
@@ -119,7 +119,7 @@ export function Contact() {
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">Send us a message</CardTitle>
                 <CardDescription className="text-gray-600 dark:text-gray-300">
-                  Fill out the form below and we&apos;ll get back to you within 24 hours.
+                  Fill out the form below and we'll get back to you within 24 hours.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -130,7 +130,7 @@ export function Contact() {
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Message Sent!</h3>
                     <p className="text-gray-600 dark:text-gray-300">
-                      Thank you for your interest. We&apos;ll be in touch soon.
+                      Thank you for your interest. We'll be in touch soon.
                     </p>
                   </div>
                 ) : (
