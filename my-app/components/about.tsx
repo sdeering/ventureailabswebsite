@@ -17,7 +17,7 @@ export function About() {
                 Leading AI Innovation in Australia
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                ALPHA AI LABS is at the forefront of artificial intelligence innovation, helping businesses across
+                VENTURE AI LABS is at the forefront of artificial intelligence innovation, helping businesses across
                 Australia harness the power of AI to transform their operations, enhance customer experiences, and drive
                 sustainable growth.
               </p>

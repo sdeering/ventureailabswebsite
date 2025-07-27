@@ -23,7 +23,7 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Image src="/logo-style-2-new.svg" alt="ALPHA AI LABS" width={40} height={40} className="w-10 h-10" />
+            <Image src="/logo-style-2-new.svg" alt="VENTURE AI LABS" width={40} height={40} className="w-10 h-10" />
             <span
               className="text-xl font-bold text-white dark:text-white"
               style={{
@@ -31,7 +31,7 @@ export function Header() {
                 fontWeight: "bold",
               }}
             >
-              ALPHA AI LABS
+              VENTURE AI LABS
             </span>
           </div>
 

@@ -11,7 +11,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "ALPHA AI LABS - Transform Your Business with AI Innovation",
+  title: "VENTURE AI LABS - Transform Your Business with AI Innovation",
   description:
     "Leading AI innovation in Australia. We help businesses transform through intelligent automation, startup solutions, and cutting-edge AI technologies.",
 }

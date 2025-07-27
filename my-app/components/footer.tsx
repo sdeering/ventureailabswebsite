@@ -6,7 +6,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="mb-4">
-              <span className="text-xl font-bold">ALPHA AI LABS</span>
+              <span className="text-xl font-bold">VENTURE AI LABS</span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
               Leading AI innovation in Australia. We help businesses transform through intelligent automation, startup
@@ -14,7 +14,7 @@ export function Footer() {
             </p>
             <div className="text-sm text-gray-400">
               <p>Brisbane, Australia</p>
-              <p>hello@alphaailabs.com</p>
+              <p>hello@ventureailabs.com</p>
             </div>
           </div>
 
@@ -42,7 +42,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 dark:border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2025 ALPHA AI LABS. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">© 2025 VENTURE AI LABS. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white text-sm">
               Privacy Policy

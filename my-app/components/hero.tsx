@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Zap } from "lucide-react"
 import Image from "next/image"
 import { SpaceBackground } from "@/components/space-background"
+import { useState, useEffect } from "react"
 
 export function Hero() {
   const scrollToContact = () => {
@@ -13,11 +14,28 @@ export function Hero() {
     }
   }
 
+  const [currentWordIndex, setCurrentWordIndex] = useState(0)
+  const words = ["Automate", "Transform", "Grow", "Socialize"]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prev) => (prev + 1) % words.length)
+    }, 3000) // Change word every 3 seconds
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section
       id="home"
       className="pt-16 bg-gradient-to-br from-[#0d1117] via-[#161b22] to-[#21262d] dark:from-[#0d1117] dark:via-[#161b22] dark:to-[#21262d] relative overflow-hidden"
     >
+      <style jsx>{`
+        @keyframes fadeInOut {
+          0%, 100% { opacity: 0.3; transform: scale(0.95); }
+          50% { opacity: 1; transform: scale(1); }
+        }
+      `}</style>
       {/* Three.js Space Background */}
       <SpaceBackground />
 
@@ -31,13 +49,22 @@ export function Hero() {
                 AI-Powered Solutions
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Transform Your Business with{" "}
+                <span
+                  key={currentWordIndex}
+                  className="inline-block animate-pulse"
+                  style={{
+                    animation: "fadeInOut 3s ease-in-out infinite",
+                  }}
+                >
+                  {words[currentWordIndex]}
+                </span>{" "}
+                Your Business with{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-purple-500">
                   AI Innovation
                 </span>
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed">
-                ALPHA AI LABS delivers cutting-edge AI automation services, startup solutions, SEO optimization, and
+                VENTURE AI LABS delivers cutting-edge AI automation services, startup solutions, SEO optimization, and
                 social media content generation to accelerate your business growth.
               </p>
             </div>

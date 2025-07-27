@@ -55,8 +55,8 @@ export function Contact() {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Let's discuss how ALPHA AI LABS can help you leverage AI to achieve your business goals. Get in touch for a
-            free consultation.
+            Let's discuss how VENTURE AI LABS can help you leverage AI to achieve your business goals. Get in touch for
+            a free consultation.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">Email Us</h3>
-                    <p className="text-gray-600 dark:text-gray-300">hello@alphaailabs.com</p>
+                    <p className="text-gray-600 dark:text-gray-300">hello@ventureailabs.com</p>
                   </div>
                 </div>
               </CardContent>
