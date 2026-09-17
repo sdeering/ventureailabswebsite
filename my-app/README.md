@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Venture AI Labs
+
+Marketing website for [Venture AI Labs](https://ventureailabs.com/), showcasing AI innovation, intelligent automation, and startup solutions.
+
+Built with [Next.js 14](https://nextjs.org/) (App Router), TypeScript, Tailwind CSS, and [shadcn/ui](https://ui.shadcn.com/) components on top of Radix UI.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and start the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/                Root layout, global styles, and the home page
+components/
+  header.tsx        Site navigation
+  hero.tsx          Hero section
+  services.tsx       Services offered
+  ai-tools.tsx        AI tools/products section
+  about.tsx           About Venture AI Labs
+  contact.tsx         Contact section
+  footer.tsx          Site footer
+  theme-provider.tsx  Dark/light theme handling (next-themes)
+  ui/                 Reusable shadcn/ui primitives
+lib/                 Shared utilities
+public/              Static assets (favicons, images)
+```
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Command         | Description                       |
+| --------------- | ---------------------------------- |
+| `npm run dev`   | Start the local development server |
+| `npm run build` | Build the production bundle        |
+| `npm run start` | Serve the production build         |
+| `npm run lint`  | Run ESLint                         |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This is a standard Next.js app and can be deployed to [Vercel](https://vercel.com/new) or any platform that supports Next.js. See the [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying) for details.
