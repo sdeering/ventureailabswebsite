@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
-import { Archivo_Black, Instrument_Serif, JetBrains_Mono } from "next/font/google"
+import { Archivo_Black, Instrument_Serif, JetBrains_Mono, Inter } from "next/font/google"
 
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const archivoBlack = Archivo_Black({ subsets: ["latin"], weight: "400", variable: "--font-archivo-black" })
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function BeeroLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${archivoBlack.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
+    <div className={`${inter.variable} ${archivoBlack.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
       {children}
     </div>
   )

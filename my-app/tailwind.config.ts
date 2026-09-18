@@ -12,7 +12,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: [
-          "var(--font-inter)",
+          "var(--font-dm-sans)",
           "-apple-system",
           "BlinkMacSystemFont",
           '"Segoe UI"',
@@ -23,6 +23,8 @@ const config: Config = {
           '"Apple Color Emoji"',
           '"Segoe UI Emoji"',
         ],
+        display: ["var(--font-space-grotesk)", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       animation: {
         "float-slow": "float 6s ease-in-out infinite",

@@ -1,23 +1,25 @@
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
-import { Services } from "@/components/services"
-import { AITools } from "@/components/ai-tools"
+import { Ticker } from "@/components/ticker"
 import { Projects } from "@/components/projects"
 import { About } from "@/components/about"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <div className="vail" style={{ minHeight: "100vh", overflowX: "hidden" }}>
       <Header />
-      <Hero />
-      <Services />
-      <AITools />
-      <Projects />
-      <About />
-      <Contact />
+      <main id="top">
+        <Hero />
+        <Ticker />
+        <Projects />
+        <About />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+      <ScrollToTop />
+    </div>
   )
 }
