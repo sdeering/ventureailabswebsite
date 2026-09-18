@@ -36,12 +36,6 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <style>{`
-          html {
-            font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-            --font-sans: var(--font-inter);
-          }
-        `}</style>
       </head>
       <body className="min-h-screen bg-[#0d1117] font-sans antialiased dark:bg-[#0d1117]">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>

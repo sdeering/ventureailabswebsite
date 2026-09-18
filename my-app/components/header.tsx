@@ -61,6 +61,12 @@ export function Header() {
               AI Tools
             </button>
             <button
+              onClick={() => scrollToSection("projects")}
+              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
+              Projects
+            </button>
+            <button
               onClick={() => scrollToSection("about")}
               className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
@@ -115,6 +121,12 @@ export function Header() {
                 className="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors w-full text-left"
               >
                 AI Tools
+              </button>
+              <button
+                onClick={() => scrollToSection("projects")}
+                className="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors w-full text-left"
+              >
+                Projects
               </button>
               <button
                 onClick={() => scrollToSection("about")}

@@ -1,0 +1,223 @@
+/*
+ * BEERO public landing page styles.
+ *
+ * Scoped via the `.beero-landing` wrapper so these don't leak into the
+ * authenticated dark-themed app. The CSS variables provide the brand
+ * palette + the paper-grain texture; the typography classes (.display
+ * / .serif-i / .mono) map to the fonts loaded in `src/app/layout.tsx`
+ * via `next/font/google`.
+ *
+ * Lives in a .css file (not an inline <style> tag) because React's
+ * server-render HTML-escapes inline <style> content (`content: ""`
+ * becomes `content: &quot;&quot;`), causing hydration mismatches.
+ */
+
+.beero-landing {
+  --orange: #FF6B1F;
+  --orange-deep: #E2530A;
+  --amber: #F2A93B;
+  --foam: #FBF1DC;
+  --cream: #F6E7C7;
+  --stout: #1A0F0A;
+  --stout-soft: #2A1A10;
+  --ink: #3B2418;
+  --line: rgba(26, 15, 10, 0.14);
+  --paper: #FDF6E8;
+
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--stout);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+.beero-landing .display { font-family: var(--font-archivo-black), sans-serif; letter-spacing: -0.02em; line-height: 0.9; }
+.beero-landing .serif-i { font-family: var(--font-instrument-serif), serif; font-style: italic; letter-spacing: -0.01em; }
+.beero-landing .mono { font-family: var(--font-jetbrains-mono), monospace; }
+.beero-landing button { font-family: inherit; cursor: pointer; }
+.beero-landing a { color: inherit; text-decoration: none; }
+
+/* paper grain */
+.beero-landing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(26, 15, 10, 0.06) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.5;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+.beero-landing > * { position: relative; z-index: 2; }
+
+@keyframes beeroTickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────
+ * Ported verbatim from the Claude Design handoff bundle's
+ * `Landing Page.html`. Class names match the prototype 1:1; all rules
+ * are scoped under `.beero-landing` so they don't leak into the
+ * authenticated dark-themed app.
+ */
+
+/* Tablet — collapse some chrome */
+@media (max-width: 1024px) {
+  .beero-landing .nav { padding: 18px 28px !important; gap: 16px; }
+  .beero-landing .nav-links { display: none !important; }
+  .beero-landing .section-pad { padding-left: 28px !important; padding-right: 28px !important; }
+  .beero-landing .hero { padding: 40px 28px 56px !important; }
+  .beero-landing .hero-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+  .beero-landing .hero-right { min-height: 480px !important; }
+  .beero-landing .features-grid { grid-template-columns: 1fr 1fr !important; }
+  .beero-landing .math-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+  .beero-landing .reviews-grid { grid-template-columns: 1fr 1fr !important; }
+  .beero-landing .faq-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .beero-landing .app-grid { grid-template-columns: 180px 1fr !important; }
+  .beero-landing .kpi-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .beero-landing .activity-grid { grid-template-columns: 1fr !important; }
+  .beero-landing .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 28px !important; }
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  .beero-landing { font-size: 15px; }
+  .beero-landing .nav { padding: 14px 18px !important; }
+  .beero-landing .nav-signin { display: none !important; }
+  .beero-landing .nav-brand-beta { display: none !important; }
+  .beero-landing .section-pad { padding-left: 20px !important; padding-right: 20px !important; }
+
+  .beero-landing .hero {
+    padding: 24px 20px 48px !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  /* On mobile we stop using grid and let the hero text flow over the beer image */
+  .beero-landing .hero-grid { display: block !important; gap: 0 !important; position: relative; }
+  .beero-landing .hero-stamps { flex-wrap: wrap; gap: 10px !important; margin-bottom: 18px !important; position: relative; z-index: 4; }
+  .beero-landing .hero-h1 {
+    font-size: clamp(40px, 12vw, 60px) !important;
+    margin-bottom: 16px !important;
+    position: relative; z-index: 4;
+    max-width: 64%;
+  }
+  .beero-landing .hero-sub {
+    font-size: 16px !important;
+    margin-bottom: 22px !important;
+    position: relative; z-index: 4;
+    max-width: 100%;
+  }
+  .beero-landing .hero-cta-row {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 10px !important;
+    position: relative; z-index: 4;
+  }
+  .beero-landing .hero-cta-row > a,
+  .beero-landing .hero-cta-row > button { width: 100%; font-size: 16px !important; padding: 16px 20px !important; text-align: center; }
+  .beero-landing .hero-social {
+    margin-top: 24px !important;
+    align-items: flex-start !important;
+    position: relative; z-index: 4;
+  }
+
+  /* Hero beer image — float behind the headline on the right */
+  .beero-landing .hero-right {
+    position: absolute !important;
+    top: 70px !important;
+    right: -60px !important;
+    width: 280px !important;
+    min-height: 0 !important;
+    height: 360px !important;
+    pointer-events: none;
+    z-index: 1 !important;
+  }
+  .beero-landing .hero-circle {
+    width: 260px !important; height: 260px !important;
+    top: 20px !important; right: 30px !important;
+    transform: none !important;
+    opacity: 0.55;
+  }
+  .beero-landing .hero-orbit {
+    width: 300px !important; height: 300px !important;
+    top: 0 !important; right: 10px !important;
+    transform: none !important;
+    opacity: 0.3;
+  }
+  .beero-landing .hero-mug-wrap {
+    transform: translateY(0) !important;
+    position: absolute !important;
+    top: 20px !important; right: 0 !important;
+  }
+  .beero-landing .hero-mug-wrap svg { width: 220px !important; height: auto !important; opacity: 0.95; }
+
+  /* Floating chips — hide all on mobile to keep hero clean */
+  .beero-landing .chip { display: none !important; }
+
+  /* Features */
+  .beero-landing .features { padding: 72px 20px !important; }
+  .beero-landing .features-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .beero-landing .features-head { flex-direction: column; align-items: flex-start !important; gap: 20px !important; margin-bottom: 36px !important; }
+  .beero-landing .feat-card { min-height: 0 !important; padding: 24px 20px !important; }
+  .beero-landing .feat-card h3 { font-size: 26px !important; }
+  .beero-landing .section-h2 { font-size: clamp(38px, 9vw, 56px) !important; }
+
+  /* Beer math */
+  .beero-landing .math { padding: 72px 20px !important; }
+  .beero-landing .math-card { padding: 22px !important; box-shadow: 6px 6px 0 var(--orange) !important; }
+  .beero-landing .math-card .display { font-size: 28px !important; }
+  .beero-landing .math-h2 { font-size: clamp(38px, 10vw, 58px) !important; }
+
+  /* App show */
+  .beero-landing .app-show { padding: 72px 20px !important; }
+  .beero-landing .app-grid { grid-template-columns: 1fr !important; }
+  .beero-landing .app-sidebar { display: none !important; }
+  .beero-landing .app-main { padding: 18px !important; }
+  .beero-landing .kpi-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+  .beero-landing .kpi-card { padding: 12px !important; }
+  .beero-landing .kpi-card .display { font-size: 20px !important; }
+  .beero-landing .app-actions button { font-size: 12px !important; padding: 6px 10px !important; }
+  .beero-landing .app-show-head { flex-direction: column; align-items: flex-start !important; gap: 20px !important; }
+
+  /* Reviews */
+  .beero-landing .reviews { padding: 72px 20px !important; }
+  .beero-landing .reviews-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .beero-landing .review-card { transform: none !important; padding: 22px !important; }
+
+  /* Pricing */
+  .beero-landing .pricing { padding: 80px 20px !important; }
+  .beero-landing .pricing-card { min-width: 0 !important; width: 100%; padding: 24px !important; }
+  .beero-landing .pricing-card-head { flex-direction: column; align-items: flex-start !important; gap: 14px; }
+
+  /* FAQ */
+  .beero-landing .faq { padding: 72px 20px !important; }
+  .beero-landing .faq h2 { font-size: 40px !important; }
+  .beero-landing .faq-q { font-size: 17px !important; }
+
+  /* Final CTA */
+  .beero-landing .final-cta { padding: 96px 20px 64px !important; }
+  .beero-landing .final-cta h2 { font-size: clamp(44px, 13vw, 76px) !important; }
+  .beero-landing .final-cta a,
+  .beero-landing .final-cta button { font-size: 17px !important; padding: 18px 24px !important; }
+
+  /* Footer */
+  .beero-landing .footer { padding: 32px 20px 40px !important; }
+  .beero-landing .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+  .beero-landing .footer-brand { grid-column: span 2; }
+  .beero-landing .footer-bottom { flex-direction: column; align-items: flex-start !important; }
+
+  /* Ticker — smaller */
+  .beero-landing .ticker-row { font-size: 16px !important; gap: 32px !important; }
+  .beero-landing .ticker-row > span { gap: 32px !important; }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .beero-landing .hero-h1 { font-size: 36px !important; max-width: 60% !important; }
+  .beero-landing .hero-mug-wrap svg { width: 190px !important; }
+  .beero-landing .hero-right { right: -50px !important; width: 240px !important; }
+}
